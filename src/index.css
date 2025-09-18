@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Glow Haven Spa - Premium Design System */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* Glow Haven Spa - iPhone 15 Pro Style Design System */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=SF+Pro+Text:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Spa Color Palette - Soft & Luxurious */
-    --background: 0 0% 100%;
-    --foreground: 345 15% 25%;
+    /* iPhone 15 Pro Inspired Color Palette */
+    --background: 0 0% 99%;
+    --foreground: 210 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 345 15% 25%;
+    --card-foreground: 210 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 345 15% 25%;
+    --popover-foreground: 210 15% 15%;
 
-    /* Primary: Soft Blush Pink */
-    --primary: 345 65% 85%;
-    --primary-foreground: 345 50% 15%;
-    --primary-hover: 345 70% 80%;
+    /* Primary: Soft Titanium Blue */
+    --primary: 210 25% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 210 30% 25%;
 
-    /* Secondary: Warm Cream */
-    --secondary: 30 40% 96%;
-    --secondary-foreground: 345 30% 20%;
-    --secondary-hover: 30 45% 92%;
+    /* Secondary: Natural Titanium */
+    --secondary: 210 10% 95%;
+    --secondary-foreground: 210 15% 20%;
+    --secondary-hover: 210 15% 90%;
 
-    /* Accent: Champagne Gold */
-    --accent: 45 80% 75%;
-    --accent-foreground: 45 60% 15%;
-    --accent-hover: 45 85% 70%;
+    /* Accent: Pro Blue */
+    --accent: 210 100% 50%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 210 100% 45%;
 
-    /* Muted: Soft Neutrals */
-    --muted: 345 20% 95%;
-    --muted-foreground: 345 15% 45%;
+    /* Muted: Subtle Grays */
+    --muted: 210 10% 96%;
+    --muted-foreground: 210 10% 50%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -46,16 +46,19 @@
     --radius: 0.75rem;
 
     /* Spa-specific design tokens */
-    --spa-gradient-primary: linear-gradient(135deg, hsl(345, 65%, 85%) 0%, hsl(0, 0%, 100%) 100%);
-    --spa-gradient-secondary: linear-gradient(135deg, hsl(30, 40%, 96%) 0%, hsl(345, 30%, 95%) 100%);
-    --spa-gradient-gold: linear-gradient(135deg, hsl(45, 80%, 75%) 0%, hsl(45, 70%, 85%) 100%);
+    --spa-gradient-primary: linear-gradient(135deg, hsl(210, 100%, 96%) 0%, hsl(0, 0%, 100%) 100%);
+    --spa-gradient-secondary: linear-gradient(135deg, hsl(210, 20%, 98%) 0%, hsl(210, 10%, 96%) 100%);
+    --spa-gradient-accent: linear-gradient(135deg, hsl(210, 100%, 50%) 0%, hsl(210, 100%, 60%) 100%);
+    --spa-gradient-hero: linear-gradient(135deg, hsl(210, 30%, 98%) 0%, hsl(210, 20%, 96%) 50%, hsl(210, 10%, 98%) 100%);
     
-    --spa-shadow-soft: 0 4px 20px hsl(345, 40%, 85%, 0.15);
-    --spa-shadow-medium: 0 8px 30px hsl(345, 40%, 80%, 0.2);
-    --spa-shadow-strong: 0 12px 40px hsl(345, 40%, 75%, 0.25);
+    --spa-shadow-soft: 0 1px 3px hsl(210, 25%, 85%, 0.1), 0 1px 2px hsl(210, 25%, 85%, 0.06);
+    --spa-shadow-medium: 0 4px 6px hsl(210, 25%, 85%, 0.07), 0 2px 4px hsl(210, 25%, 85%, 0.06);
+    --spa-shadow-large: 0 20px 25px hsl(210, 25%, 85%, 0.1), 0 10px 10px hsl(210, 25%, 85%, 0.04);
+    --spa-shadow-xl: 0 25px 50px hsl(210, 25%, 85%, 0.25);
     
-    --spa-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --spa-transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --spa-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --spa-transition-slow: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --spa-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -119,12 +122,15 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-sf-text;
     font-feature-settings: "liga" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    @apply font-sf-display font-medium;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -150,8 +156,20 @@
     box-shadow: var(--spa-shadow-medium);
   }
   
-  .spa-shadow-strong {
-    box-shadow: var(--spa-shadow-strong);
+  .spa-shadow-large {
+    box-shadow: var(--spa-shadow-large);
+  }
+  
+  .spa-shadow-xl {
+    box-shadow: var(--spa-shadow-xl);
+  }
+  
+  .spa-gradient-hero {
+    background: var(--spa-gradient-hero);
+  }
+  
+  .spa-gradient-accent {
+    background: var(--spa-gradient-accent);
   }
   
   .spa-transition {
@@ -181,15 +199,36 @@
     scroll-behavior: smooth;
   }
 
-  /* Fade in animation */
+  /* iPhone 15 Pro style animations */
   .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Smooth carousel transitions */
+  .carousel-smooth {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Micro-interactions */
+  .interactive-hover {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .interactive-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Premium glass effect */
+  .glass-effect {
+    backdrop-filter: blur(20px);
+    background: hsla(0, 0%, 100%, 0.8);
+    border: 1px solid hsla(210, 25%, 85%, 0.2);
   }
 }

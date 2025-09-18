@@ -15,11 +15,11 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary-hover",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Spa-specific variants
-        hero: "bg-accent text-accent-foreground hover:bg-accent-hover spa-shadow-medium btn-premium font-semibold tracking-wide",
-        premium: "spa-gradient-primary text-primary-foreground hover:opacity-90 spa-shadow-soft btn-premium border border-primary/20",
-        elegant: "bg-background text-foreground border-2 border-primary hover:bg-primary hover:text-primary-foreground spa-shadow-soft",
-        gold: "spa-gradient-gold text-accent-foreground hover:opacity-90 spa-shadow-medium btn-premium font-medium",
+        // iPhone 15 Pro style variants
+        hero: "bg-primary text-primary-foreground hover:bg-primary-hover spa-shadow-medium btn-premium font-medium tracking-tight",
+        premium: "spa-gradient-accent text-accent-foreground hover:opacity-90 spa-shadow-medium btn-premium border-0",
+        elegant: "bg-secondary text-secondary-foreground border border-border hover:bg-secondary-hover spa-shadow-soft interactive-hover",
+        pro: "bg-accent text-accent-foreground hover:bg-accent-hover spa-shadow-large btn-premium font-medium tracking-tight",
       },
       size: {
         default: "h-10 px-4 py-2",

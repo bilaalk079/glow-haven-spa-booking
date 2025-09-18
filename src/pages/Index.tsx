@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
-import BookingFlow from "@/components/BookingFlow";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import BookingFlow from "@/components/BookingFlow";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 
@@ -39,13 +40,16 @@ const Index = () => {
         <Services />
       </div>
       <div className="fade-in">
-        <BookingFlow />
-      </div>
-      <div className="fade-in">
         <Gallery />
       </div>
       <div className="fade-in">
         <Testimonials />
+      </div>
+      <div className="fade-in">
+        <FAQ />
+      </div>
+      <div className="fade-in">
+        <BookingFlow />
       </div>
       <div className="fade-in">
         <About />
