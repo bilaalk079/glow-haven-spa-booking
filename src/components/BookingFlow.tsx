@@ -76,7 +76,7 @@ Preferred Time: ${selectedTime}
 
 Thank you!`;
     
-    const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+2349046482344?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     setIsProcessing(false);
@@ -92,7 +92,7 @@ Thank you!`;
         <div className="max-w-2xl mx-auto text-center">
           <Card className="spa-shadow-medium">
             <CardContent className="py-12">
-              <Loader2 className="w-16 h-16 animate-spin text-accent mx-auto mb-6" />
+              <Loader2 className="w-16 h-16 animate-spin text-froeground mx-auto mb-6" />
               <h3 className="text-2xl font-semibold mb-4">Processing Your Booking...</h3>
               <p className="text-muted-foreground">Please wait while we prepare your spa experience</p>
             </CardContent>
@@ -122,7 +122,7 @@ Thank you!`;
                 <div className={cn(
                   "w-10 h-10 rounded-full flex items-center justify-center font-semibold",
                   step >= stepNumber 
-                    ? "bg-accent text-accent-foreground" 
+                    ? "bg-slate-600 text-accent-foreground" 
                     : "bg-muted text-muted-foreground"
                 )}>
                   {stepNumber}
@@ -130,7 +130,7 @@ Thank you!`;
                 {stepNumber < 3 && (
                   <div className={cn(
                     "w-12 h-1 mx-2",
-                    step > stepNumber ? "bg-accent" : "bg-muted"
+                    step > stepNumber ? "bg-slate-600" : "bg-muted"
                   )} />
                 )}
               </div>
@@ -229,7 +229,7 @@ Thank you!`;
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
-                        variant="outline"
+                        variant="default"
                         className={cn(
                           "w-full justify-start text-left font-normal",
                           !selectedDate && "text-muted-foreground"
@@ -261,7 +261,7 @@ Thank you!`;
                     {timeSlots.map((time) => (
                       <Button
                         key={time}
-                        variant={selectedTime === time ? "default" : "outline"}
+                        variant={selectedTime === time ? "default" : "elegant"}
                         size="sm"
                         onClick={() => setSelectedTime(time)}
                       >
@@ -272,7 +272,7 @@ Thank you!`;
                 </div>
 
                 {selectedServices.length > 0 && (
-                  <div className="p-4 spa-gradient-secondary rounded-lg">
+                  <div className="p-4 spa-gradient-default rounded-lg">
                     <h4 className="font-semibold mb-2">Booking Summary</h4>
                     <div className="space-y-1 text-sm">
                       {selectedServices.map(serviceId => {
@@ -284,7 +284,7 @@ Thank you!`;
                           </div>
                         );
                       })}
-                      <div className="border-t pt-2 font-semibold text-lg text-accent">
+                      <div className="border-t pt-2 font-semibold text-lg text-foreground">
                         Total: ${getTotalPrice()}
                       </div>
                     </div>
@@ -306,7 +306,7 @@ Thank you!`;
               <div className="ml-auto">
                 {step < 3 ? (
                   <Button 
-                    variant="premium"
+                    variant="outline"
                     onClick={() => setStep(step + 1)}
                     disabled={step === 1 ? !canProceedToStep2 : !canProceedToStep3}
                   >
@@ -314,7 +314,7 @@ Thank you!`;
                   </Button>
                 ) : (
                   <Button 
-                    variant="hero"
+                    variant="outline"
                     onClick={handleConfirmBooking}
                     disabled={!canConfirm}
                     className="flex items-center gap-2"

@@ -71,11 +71,11 @@ const Gallery = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20">
-          <div className="glass-effect inline-flex items-center gap-4 px-8 py-6 rounded-full spa-shadow-medium">
-            <Camera className="w-6 h-6 text-accent" />
+        <div className="text-center mt-20 ">
+          <div className="glass-effect inline-flex items-center gap-4 px-8 py-6 rounded-full spa-shadow-medium bg-secondary">
+            <Camera className="w-6 h-6 text-foreground" />
             <span className="text-foreground font-sf-text font-medium">Virtual tour available upon request</span>
-            <Sparkles className="w-6 h-6 text-accent" />
+            <Sparkles className="w-6 h-6 text-foreground" />
           </div>
         </div>
       </div>

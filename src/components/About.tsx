@@ -31,14 +31,14 @@ const About = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-20 px-4 bg-secondary/20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Where Luxury Meets 
-              <span className="text-accent"> Wellness</span>
+              <span className="text-foreground"> Wellness</span>
             </h2>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
@@ -70,11 +70,11 @@ const About = () => {
               return (
                 <div 
                   key={index}
-                  className="text-center group"
+                  className="text-center group border rounded-2xl p-2"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="mx-auto mb-4 w-16 h-16 spa-gradient-gold rounded-full flex items-center justify-center group-hover:scale-110 spa-transition spa-shadow-soft">
-                    <IconComponent className="w-8 h-8 text-accent-foreground" />
+                    <IconComponent className="w-8 h-8 text-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-3">
                     {feature.title}
@@ -90,33 +90,40 @@ const About = () => {
         
         {/* Stats Section */}
         <div className="mt-20 pt-16 border-t border-border">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="group">
-              <div className="text-4xl font-bold text-accent mb-2 group-hover:scale-110 spa-transition">
-                1000+
+            <div className="text-center">
+          <div className="glass-effect rounded-xl sm:rounded-2xl p-4 sm:p-6 spa-shadow-soft inline-block bg-secondary/20 border border-border/30">
+            <div className="flex items-center justify-center gap-6 sm:gap-8 lg:gap-12 flex-wrap">
+              <div className="text-center">
+                <h4 className="text-xl sm:text-2xl lg:text-3xl font-sf-display font-bold text-foreground">
+                  2K+
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-sf-text">
+                  Happy Clients
+                </p>
               </div>
-              <div className="text-muted-foreground">Happy Clients</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-accent mb-2 group-hover:scale-110 spa-transition">
-                5+
+              <div className="w-px h-8 bg-border hidden sm:block"></div>
+              <div className="text-center">
+                <h4 className="text-xl sm:text-2xl lg:text-3xl font-sf-display font-bold text-foreground">
+                  15+
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-sf-text">
+                  Years of Experience
+                </p>
               </div>
-              <div className="text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-accent mb-2 group-hover:scale-110 spa-transition">
-                15+
+              <div className="w-px h-8 bg-border hidden sm:block"></div>
+              <div className="text-center">
+                <h4 className="text-xl sm:text-2xl lg:text-3xl font-sf-display font-bold text-foreground">
+                  98%
+                </h4>
+                <p className="text-xs sm:text-sm text-muted-foreground font-sf-text">
+                  Return Rate
+                </p>
               </div>
-              <div className="text-muted-foreground">Premium Treatments</div>
-            </div>
-            <div className="group">
-              <div className="text-4xl font-bold text-accent mb-2 group-hover:scale-110 spa-transition">
-                98%
-              </div>
-              <div className="text-muted-foreground">Satisfaction Rate</div>
             </div>
           </div>
         </div>
+        </div>
+        
       </div>
     </section>
   );

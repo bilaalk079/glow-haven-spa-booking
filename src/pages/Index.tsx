@@ -7,6 +7,7 @@ import FAQ from "@/components/FAQ";
 import BookingFlow from "@/components/BookingFlow";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/NavBar";
 
 const Index = () => {
   useEffect(() => {
@@ -35,6 +36,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+     <Navbar/>
       <Hero />
       <div className="fade-in">
         <Services />

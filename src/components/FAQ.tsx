@@ -82,7 +82,7 @@ const FAQ = () => {
             <Card className="spa-shadow-medium border-0 glass-effect">
               <CardHeader className="pb-8">
                 <CardTitle className="text-2xl font-sf-display font-medium flex items-center gap-3">
-                  <HelpCircle className="w-6 h-6 text-accent" />
+                  <HelpCircle className="w-6 h-6 text-foreground" />
                   Common Questions
                 </CardTitle>
               </CardHeader>
@@ -92,7 +92,7 @@ const FAQ = () => {
                     <AccordionItem key={index} value={`item-${index}`} className="border-border/50">
                       <AccordionTrigger className="text-left hover:no-underline group">
                         <div className="flex items-center gap-3">
-                          <faq.icon className="w-5 h-5 text-accent group-hover:text-accent-hover spa-transition" />
+                          <faq.icon className="w-5 h-5 text-foreground group-hover:text-foreground-hover spa-transition" />
                           <span className="font-sf-text font-medium">{faq.question}</span>
                         </div>
                       </AccordionTrigger>
@@ -111,15 +111,15 @@ const FAQ = () => {
             <Card className="spa-shadow-medium border-0 glass-effect h-full">
               <CardHeader className="pb-8">
                 <CardTitle className="text-2xl font-sf-display font-medium flex items-center gap-3">
-                  <ShieldCheck className="w-6 h-6 text-accent" />
+                  <ShieldCheck className="w-6 h-6 text-foreground" />
                   Spa Visit Tips
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-8">
                 {tips.map((tip, index) => (
                   <div key={index} className="flex gap-4 group interactive-hover p-4 rounded-lg hover:bg-secondary/50 spa-transition">
-                    <div className="spa-gradient-accent rounded-full p-3 spa-shadow-soft">
-                      <tip.icon className="w-5 h-5 text-white" />
+                    <div className="spa-gradient-foreground rounded-full p-3  h-auto flex items-center spa-shadow-soft">
+                      <tip.icon className="w-5 h-5 text-base" />
                     </div>
                     <div>
                       <h4 className="font-sf-display font-medium text-foreground mb-2">
