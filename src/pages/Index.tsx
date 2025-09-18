@@ -1,12 +1,56 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from "react";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import BookingFlow from "@/components/BookingFlow";
+import Gallery from "@/components/Gallery";
+import Testimonials from "@/components/Testimonials";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 
 const Index = () => {
+  useEffect(() => {
+    // Fade in animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(el => observer.observe(el));
+
+    return () => {
+      fadeElements.forEach(el => observer.unobserve(el));
+    };
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <Hero />
+      <div className="fade-in">
+        <Services />
       </div>
+      <div className="fade-in">
+        <BookingFlow />
+      </div>
+      <div className="fade-in">
+        <Gallery />
+      </div>
+      <div className="fade-in">
+        <Testimonials />
+      </div>
+      <div className="fade-in">
+        <About />
+      </div>
+      <Footer />
     </div>
   );
 };
